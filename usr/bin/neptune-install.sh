@@ -407,6 +407,9 @@ if [ -f /hdinstall/etc/kde4/kdm/kdmrc ]; then
 	    -e "s/^#?DefaultUser=.*\$/DefaultUser=$BENUTZER/" \
         /hdinstall/etc/kde4/kdm/kdmrc
 fi
+if [ -f /hdinstall/etc/sddm.conf.distrib ]; then
+  mv /hdinstall/etc/sddm.conf.distrib /hdinstall/etc/sddm.conf
+fi
 
 if [ "$msgbox" == "gdialog" ]; then
       qdbus $dcopRef setLabelText "$configureusermsg"
